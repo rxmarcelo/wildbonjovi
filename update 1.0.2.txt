@@ -1,0 +1,80 @@
+- Added countdown circle for seconds
+- Added option to set the time of an event (hours and minutes)
+- Added option to automatically hide events that took place
+
+Please follow the instructions bellow to do the update.
+
+
+Manual update (Recommended if you have done changes to the files that need to be updated):
+
+- Added countdown circle for seconds: Add the following line to the div with class "ccounter" in your index.html:
+	<div class="counter"><input class="knob second" data-readOnly="true" data-width="85" data-height="85" data-min="0" data-max="60" data-displayPrevious=true data-fgColor="#3f9f97" data-skin="beat" data-thickness=".15" value="75" /><span>SEC.</span></div>
+
+Now the "ccounter" div should look like this:
+
+<div class="ccounter">
+	<div class="counter"><input class="knob days" data-readOnly="true" data-width="85" data-height="85" data-displayPrevious=true data-fgColor="#3f9f97" data-skin="beat" data-thickness=".15" data-min="0" data-max="365" value="75" /><span>DAYS</span></div>
+	<div class="counter"><input class="knob hour" data-readOnly="true" data-width="85" data-height="85" data-min="0" data-max="24" data-displayPrevious=true data-fgColor="#3f9f97" data-skin="beat" data-thickness=".15" value="75" /><span>HOURS</span></div>
+	<div class="counter"><input class="knob minute" data-readOnly="true" data-width="85" data-height="85" data-min="0" data-max="60" data-displayPrevious=true data-fgColor="#3f9f97" data-skin="beat" data-thickness=".15" value="75" /><span>MIN.</span></div>
+	<div class="counter"><input class="knob second" data-readOnly="true" data-width="85" data-height="85" data-min="0" data-max="60" data-displayPrevious=true data-fgColor="#3f9f97" data-skin="beat" data-thickness=".15" value="75" /><span>SEC.</span></div>
+</div>
+
+Note that the data-width and data-height attributes of all nested inputs were changed to "85" so they could fit in the same row.
+Don't forget to change the attribute data-fgColor to your own color.
+
+Copy the files plugins.js and countdown/jquery.ccountdown.js in the update folder to the folder of your project.
+
+Add the following lines to the end of your css/style.css file:
+
+.ccounter .counter span{
+	width:87px;
+	bottom:21px;
+}
+
+@media (max-width: 480px) {
+	#counter-info{
+		height:auto;
+	}
+}
+
+
+
+
+- Added option to set the time of an event (hours and minutes): Add the keys "hour" and "minute" to your js/google_maps_marker/myconcerts.js array items. They now should look like this:
+{
+	year:2014,
+	month:01,
+	day:20,
+	hour:22,
+	minute:30,
+	latitude:51.509597,
+	longitude:0.015965,
+	location:'The O2 - Peninsula Square, London, UK',
+	infoWindow:'The great concert in Lorem Ipsum<br/>Ticket price: $80<br/><a href="#" target="_blank">Buy tickets here</a>'
+}
+
+
+Now open the scripts.js in the update folder and find the function "googleMap". Copy all its contents and replace in your "googleMap" function on your js/scripts.js.
+
+Don't forget to change the variable "color" to your own color.
+
+
+
+
+- Added option to automatically hide events that took place: 
+It was created a new variable in the beginning of the function "googleMap" called hidePastEvents. Set this variable to true to automatically hide events that took place.
+
+
+
+
+
+Automatic update (Only if you haven't made any changes to the files that need to be updated):
+
+Simply copy the files in the update folder to the folder of your project.
+
+
+
+
+
+
+If you have any questions, feel free to contact us trough our ThemeForest profile at http://themeforest.net/user/WiselyThemes.
